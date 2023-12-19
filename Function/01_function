@@ -1,0 +1,71 @@
+function addTwoNumber(number1 , number2)
+{
+    console.log(number1 + number2)
+}
+
+addTwoNumber(3,2);
+
+
+function mulTwoNumber(number1 , number2)
+{
+    const res = number1 * number2;
+    return res;
+}
+
+const result = mulTwoNumber(3,2);
+console.log(result);
+
+
+function loginUserMessage(userName = "Ram")
+{
+    // if(userName === undefined)
+    if(!userName)
+    {
+        console.log("Please enter User Name");
+        return;
+    }
+    return `${userName} Just logged in`
+}
+
+console.log(loginUserMessage("Shivam"));
+console.log(loginUserMessage());
+
+
+function calculateCartPrice(...num1)
+{
+    return num1;
+}
+
+console.log(calculateCartPrice(200,350,400));
+
+
+//  Use Object in Function
+
+const user = {
+    userName: "Shivam",
+    Age : 24
+}
+
+function handleObject(anyobject)
+{
+    console.log(`UserName is ${anyobject.userName} and Age is ${anyobject.Age}`);
+}
+
+handleObject(user)
+
+handleObject({
+    userName: "Hitesh",
+    Age : 30
+})
+
+//  Use Array in Function
+
+const myArr  = [10,20,30,40];
+
+function returnSecondValue(getArray)
+{
+    return getArray[1];
+}
+
+console.log(returnSecondValue(myArr));
+console.log(returnSecondValue([100,200,300]));
