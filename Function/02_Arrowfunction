@@ -1,8 +1,8 @@
 // this refer to current context
 const user = {
-    userName : "Shivam",
-    webPrice : 25,
-    welcomeMessage : function(){
+    userName: "Shivam",
+    webPrice: 25,
+    welcomeMessage: function () {
         console.log(`${this.userName}, Welcome to website`);
         console.log(this);
     }
@@ -14,13 +14,13 @@ user.welcomeMessage();
 
 // console.log(this); empty object
 
-const fun= function() {
+const fun = function () {
     let userName = "Shivam"
     console.log(this.userName)
 }
 fun() // o/p : Undefined
 
-const fuArrow=() => {
+const fuArrow = () => {
     let userName = "Shivam"
     console.log(this.userName)
 }
@@ -29,20 +29,34 @@ fuArrow() // o/p : Undefined
 
 // arrow function
 
-const addTwo = (num1,num2) => {
-    return num1+num2;
+const addTwo = (num1, num2) => {
+    return num1 + num2;
 }
-console.log(addTwo(3,4));
+console.log(addTwo(3, 4));
 ////////////// or ////////
+
 // for single line
-const mulTwo = (num1,num2) => num1 * num2;
-console.log(mulTwo(3,4));
+const mulTwo = (num1, num2) => num1 * num2;
+console.log(mulTwo(3, 4));
 
-const a  = (num1, num2) => (num1 + num2);
-console.log(a(3,4));
+const a = (num1, num2) => (num1 + num2);
+console.log(a(3, 4));
 
-const ob = () => ({userName: "Sam"});
+const ob = () => ({ userName: "Sam" });
 
 console.log(ob());
 
+
+/*
+ Immediately Invoked Function Expressions (IIFE)
+ A function that runs the moment it is invoked or called in the JavaScript. And prevent pollution of the global JS scope. 
+ Note : When we write tw IIFE function (;) required in first IIFE Function other wise it give error
+ */
+(function IIFE() {
+    console.log("DB Connected");
+})();
+
+((name) =>{
+    console.log(`DB Connected Two ${name}`);
+})('Shivam');
 
